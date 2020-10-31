@@ -5,7 +5,7 @@ import Register from "./components/main/Register";
 import Login from "./components/main/Login";
 import CreateBlog from "./components/main/CreateBlog";
 import AllBlogs from "./components/main/AllBlogs";
-// import Home from "./components/main/Home";
+import Home from "./components/main/Home";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 const App = () => {
   return (

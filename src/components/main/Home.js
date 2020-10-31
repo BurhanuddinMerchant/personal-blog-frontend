@@ -5,13 +5,17 @@ const Login = () => {
     <main>
       <div className="container">
         <div className="box" style={{ textAlign: "center" }}>
-          <h1>Welcome To Pulzion 20 Online Judge</h1>
-          <Link to="/register">
-            <button>Register For Contest Here</button>
+          <h1>Welcome To Burhanuddins Personal Blog</h1>
+          <Link to="/all">
+            <button>All Blogs</button>
           </Link>
           <div></div>
-          <Link to="/login">
-            <button>Login For Contest Here</button>
+          <Link to="/create">
+            <button>Create Blog</button>
+          </Link>
+          <br />
+          <Link to="/all">
+            <button>All Blogs</button>
           </Link>
         </div>
       </div>

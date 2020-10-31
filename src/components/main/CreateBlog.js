@@ -111,7 +111,7 @@ const CreateBlog = () => {
               onChange={handleChange}
             />
             <br />
-            <button type="submit">Sign-Up</button>
+            <button type="submit">Create</button>
             <br />
           </form>
 
@@ -123,6 +123,10 @@ const CreateBlog = () => {
           <p>
             Don't have an account? <Link to="/register">Click Here</Link>
           </p>
+          <br />
+          <Link to="/all">
+            <button>All Blogs</button>
+          </Link>
         </div>
       </div>
     </main>
