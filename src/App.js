@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       {/* <Header /> */}
       <Switch>
-        {/* <Home exact path="/" /> */}
+        <Home exact path="/" />
         <Register exact path="/register" />
         <Login exact path="/login" />
         <CreateBlog exact path="/create" />
