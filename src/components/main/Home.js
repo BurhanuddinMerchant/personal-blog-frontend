@@ -13,10 +13,6 @@ const Login = () => {
           <Link to="/create">
             <button>Create Blog</button>
           </Link>
-          <br />
-          <Link to="/all">
-            <button>All Blogs</button>
-          </Link>
         </div>
       </div>
     </main>
