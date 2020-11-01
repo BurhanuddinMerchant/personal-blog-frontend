@@ -94,9 +94,10 @@ main {
   display: flex;
   flex-direction: column;
   margin: 2em auto;
-  padding: 2em;
   align-content: center;
   background-color: #ffffff;
+  width: 100%;
+  padding: auto;
 }
 .container form {
   display: flex;
@@ -148,11 +149,13 @@ footer {
   padding: 2em;
   text-align: center;
 }
-
+.box {
+  border: #f64c72 2px solid;
+}
 .blog {
-  margin: 0 auto;
   max-width: 1024px;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   background-color: #2f2fa2;
   border-radius: 1%;
   margin-bottom: 2em;
