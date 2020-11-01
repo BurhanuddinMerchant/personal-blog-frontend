@@ -87,8 +87,10 @@ main {
   flex: 1;
 }
 .container {
-  padding: 0;
+  margin: 0 auto;
+  padding: 1em;
   display: flex;
+  width: 90%;
 }
 .box {
   display: flex;
@@ -117,15 +119,20 @@ main {
   font-size: 1rem;
 }
 .container button {
-  min-width: 200px;
+  margin: 0 auto;
+  max-width: 300px;
   margin-top: 2em;
   font-size: 1rem;
   color: #ffffff;
   background-color: #3e3636;
   border: #3e3636 2px solid;
+  margin-bottom: 1em;
 }
 .container button:hover {
   color: #d72323;
+}
+button {
+  border-radius: 5%;
 }
 #submit-feedback-neg {
   margin-top: 1em;
@@ -150,7 +157,7 @@ footer {
   text-align: center;
 }
 .box {
-  border: #f64c72 2px solid;
+  padding: 2em;
 }
 .blog {
   max-width: 1024px;
