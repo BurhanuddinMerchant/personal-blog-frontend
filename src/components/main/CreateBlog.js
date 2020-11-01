@@ -28,11 +28,11 @@ const CreateBlog = () => {
         },
         data: data,
       };
-
       axios(config)
         .then(function (response) {
           document.getElementById("submit-feedback-pos").innerHTML =
             "Created Successfully!!";
+          // console.log("Api Call");
           console.log(JSON.stringify(response.data));
         })
         .catch(function (error) {

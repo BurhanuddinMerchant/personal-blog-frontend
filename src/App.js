@@ -6,6 +6,7 @@ import Login from "./components/main/Login";
 import CreateBlog from "./components/main/CreateBlog";
 import AllBlogs from "./components/main/AllBlogs";
 import Home from "./components/main/Home";
+import Logout from "./components/main/Logout";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Login exact path="/login" />
         <CreateBlog exact path="/create" />
         <AllBlogs exact path="/all" />
+        <Logout exact path="/logout" />
         {/* <Error path="*" /> */}
       </Switch>
       <Footer />

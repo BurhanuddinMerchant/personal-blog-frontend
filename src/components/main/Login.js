@@ -11,15 +11,22 @@ const Login = () => {
     const { email, password } = user;
     if (email && password) {
       document.getElementById("submit-feedback-neg").innerHTML = "";
-      document.getElementById("submit-feedback-pos").innerHTML =
-        "Successfully Submitted!!";
+      document.getElementById("submit-feedback-pos").innerHTML = "Loading.....";
       console.log(user);
       axios
         .post("admin/login", user)
         .then((res) => {
           localStorage.setItem("token", res.data.token);
+          document.getElementById("submit-feedback-neg").innerHTML = "";
+          document.getElementById("submit-feedback-pos").innerHTML =
+            "Successfully Logged In!!";
         })
-        .catch((e) => console.log(e));
+        .catch((e) => {
+          document.getElementById("submit-feedback-neg").innerHTML =
+            "Login Failed";
+          document.getElementById("submit-feedback-pos").innerHTML = "";
+          console.log(e);
+        });
       setUser({
         email: "",
         password: "",
@@ -67,6 +74,9 @@ const Login = () => {
           </p>
           <Link to="/create">
             <button>Create Blog?</button>
+          </Link>
+          <Link to="/logout">
+            <button>Logout ?</button>
           </Link>
         </div>
       </div>

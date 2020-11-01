@@ -9,7 +9,8 @@ const AllBlogs = () => {
         .get("blog")
         .then((res) => res.data)
         .then((result) => {
-          console.log(result);
+          console.log("Api Call");
+          // console.log(result);
           setblogs(result);
         })
         .catch((e) => {
