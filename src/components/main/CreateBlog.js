@@ -41,7 +41,6 @@ const CreateBlog = () => {
           document.getElementById("submit-feedback-pos").innerHTML = "";
           console.log(error);
         });
-
       setblog({
         id: new Date().getTime(),
         title: "",
@@ -85,15 +84,6 @@ const CreateBlog = () => {
             />
             <br />
             <input
-              type="content"
-              placeholder="content"
-              id="content"
-              name="content"
-              value={blog.content}
-              onChange={handleChange}
-            />
-            <br />
-            <input
               type="text area"
               placeholder="author"
               id="author"
@@ -111,6 +101,20 @@ const CreateBlog = () => {
               onChange={handleChange}
             />
             <br />
+            <br />
+            <textarea
+              rows="10"
+              cols="30"
+              type="content"
+              placeholder="content"
+              id="content"
+              name="content"
+              value={blog.content}
+              onChange={handleChange}
+            />
+
+            <br />
+
             <button type="submit">Create</button>
             <br />
           </form>

@@ -1,6 +1,6 @@
 import React from "react";
-// import Header from "./components/header/Header.js";
-// import Footer from "./components/footer/Footer.js";
+import Header from "./components/header/Header.js";
+import Footer from "./components/footer/Footer.js";
 import Register from "./components/main/Register";
 import Login from "./components/main/Login";
 import CreateBlog from "./components/main/CreateBlog";
@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 const App = () => {
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <Switch>
         <Home exact path="/" />
         <Register exact path="/register" />
@@ -19,7 +19,7 @@ const App = () => {
         <AllBlogs exact path="/all" />
         {/* <Error path="*" /> */}
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 };
