@@ -63,9 +63,21 @@ nav a:hover {
   nav ul {
     flex-direction: row;
   }
-  nav li {
-    padding: 0 2em;
+  nav a {
+    border-radius: 10%;
+    padding: 1em;
+    background-color: #f5eded;
   }
+  nav a:hover {
+    background-color: #f64c72;
+    color: #f5eded;
+  }
+}
+.box h4 {
+  font-size: 2em;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 1em;
 }
 
 /*end of nav-bar*/
@@ -79,8 +91,11 @@ main {
   display: flex;
 }
 .box {
+  display: flex;
+  flex-direction: column;
   margin: 2em auto;
   padding: 2em;
+  align-content: center;
   background-color: #ffffff;
 }
 .container form {
@@ -92,6 +107,7 @@ main {
 .box img {
   width: 100%;
   max-width: 500px;
+  margin-top: 1em;
 }
 .container input {
   margin-top: 2em;
@@ -100,10 +116,12 @@ main {
   font-size: 1rem;
 }
 .container button {
+  min-width: 200px;
   margin-top: 2em;
   font-size: 1rem;
   color: #ffffff;
   background-color: #3e3636;
+  border: #3e3636 2px solid;
 }
 .container button:hover {
   color: #d72323;
@@ -129,4 +147,49 @@ footer {
   background-color: #ffffff;
   padding: 2em;
   text-align: center;
+}
+
+.blog {
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+  background-color: #2f2fa2;
+  border-radius: 1%;
+  margin-bottom: 2em;
+  border: #f64c72 1em solid;
+}
+
+.blog-title {
+  border-bottom: white 2px double;
+  color: white;
+  /* text-shadow: #f64c72 0 0 3px; */
+  margin: 1em auto;
+  width: fit-content;
+  padding: 0.5em;
+  font-size: 2rem;
+}
+.snippet {
+  width: fit-content;
+  margin: 0 auto;
+  color: #f64c72;
+  /* text-shadow: #ffffff 0 0 0.5px; */
+  font-size: 1.5em;
+}
+
+.mainContent {
+  width: 80%;
+  margin: 1em auto;
+  background-color: #97caef;
+  padding: 2em;
+  /* border: #242582 0.5em solid; */
+  border-radius: 1%;
+}
+
+.author {
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 1.25em;
+  color: aliceblue;
+  border-bottom: white 2px double;
+  margin-bottom: 1em;
 }

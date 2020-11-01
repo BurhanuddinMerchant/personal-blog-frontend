@@ -25,12 +25,12 @@ const AllBlogs = () => {
           <h4>All Blogs</h4>
           {blogs.map((blg) => {
             return (
-              <div key={blg._id}>
-                <h2>{blg.title}</h2>
-                <h4>{blg.snippet}</h4>
-                <p>{blg.content}</p>
+              <div className="blog" key={blg._id}>
+                <h2 className="blog-title">{blg.title}</h2>
+                <h4 className="snippet">{blg.snippet}</h4>
                 <img src={blg.image} alt="blog" />
-                <h3>BY : {blg.author}</h3>
+                <p className="mainContent">{blg.content}</p>
+                <h3 className="author">BY : {blg.author}</h3>
               </div>
             );
           })}
