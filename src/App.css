@@ -98,7 +98,7 @@ main {
   margin: 2em auto;
   align-content: center;
   background-color: #ffffff;
-  width: 100%;
+  width: 95%;
   padding: auto;
 }
 .container form {
@@ -190,11 +190,15 @@ footer {
   width: 80%;
   margin: 1em auto;
   background-color: #97caef;
-  padding: 2em;
+  padding: 1em;
   /* border: #242582 0.5em solid; */
   border-radius: 1%;
 }
-
+@media (min-width: 675px) {
+  .mainContent {
+    padding: 2em;
+  }
+}
 .author {
   margin: 0 auto;
   width: fit-content;
