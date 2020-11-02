@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 const CreateBlog = () => {
   const [blog, setblog] = useState({
     id: new Date().getTime(),
@@ -121,16 +120,7 @@ const CreateBlog = () => {
 
           <div id="submit-feedback-pos"></div>
           <div id="submit-feedback-neg"></div>
-          <p>
-            already have an account? <Link to="/login">Click Here</Link>
-          </p>
-          <p>
-            Don't have an account? <Link to="/register">Click Here</Link>
-          </p>
           <br />
-          <Link to="/all">
-            <button>All Blogs</button>
-          </Link>
         </div>
       </div>
     </main>

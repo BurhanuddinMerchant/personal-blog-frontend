@@ -5,16 +5,13 @@ const Navbar = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/login-out">Login/out/Delete</Link>
         </li>
         <li>
-          <Link to="/blogs">All Blogs</Link>
+          <Link to="/createblog">Create Blogs</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/admin">Admin</Link>
+          <Link to="/deleteblog">Delete Blog</Link>
         </li>
       </ul>
     </nav>
