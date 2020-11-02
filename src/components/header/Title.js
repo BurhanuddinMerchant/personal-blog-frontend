@@ -2,8 +2,8 @@ import React from "react";
 const Title = () => {
   return (
     <>
-      <div className="head-container">
-        <h1>Bloggerify By Burza</h1>
+      <div>
+        <h1>The Blog</h1>
         <p>Experience the Written</p>
       </div>
     </>

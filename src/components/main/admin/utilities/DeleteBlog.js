@@ -1,15 +1,18 @@
 import axios from "axios";
 
+import Feedback from "./Feedback";
 import React, { useState } from "react";
 const DeleteBlog = () => {
+  const [feedback, setFeedback] = useState({
+    message: "",
+    type: 1,
+  });
   const [title, setTitle] = useState("");
   const handleDelete = (e) => {
     e.preventDefault();
     if (title) {
       if (!localStorage.getItem("token")) {
-        document.getElementById("submit-feedback-neg").innerHTML =
-          "You Are Not Logged In!!";
-        document.getElementById("submit-feedback-pos").innerHTML = "";
+        setFeedback({ message: "You Are Not Logged In!!", type: 3 });
         return;
       } else {
         var config = {
@@ -22,22 +25,16 @@ const DeleteBlog = () => {
         };
         axios(config)
           .then(function (response) {
-            document.getElementById("submit-feedback-pos").innerHTML =
-              "Deleted Successfully";
-            document.getElementById("submit-feedback-neg").innerHTML = "";
-            console.log(JSON.stringify(response.data));
+            setFeedback({ message: "Deleted Successfully", type: 2 });
+            // console.log(JSON.stringify(response.data));
           })
           .catch(function (error) {
-            document.getElementById("submit-feedback-neg").innerHTML =
-              "Deletion Failed";
-            document.getElementById("submit-feedback-pos").innerHTML = "";
+            setFeedback({ message: "Deletion Failed", type: 3 });
             // console.log(error);
           });
       }
     } else {
-      document.getElementById("submit-feedback-neg").innerHTML =
-        "Please Enter The Title!!";
-      document.getElementById("submit-feedback-pos").innerHTML = "";
+      setFeedback({ message: "Please Enter the Title", type: 3 });
     }
   };
   const handleChange = (e) => {
@@ -45,9 +42,9 @@ const DeleteBlog = () => {
     setTitle(value);
   };
   return (
-    <main>
+    <main style={{ textAlign: "center" }}>
       <h4>Blogs Admin Signup</h4>
-      <form onSubmit={handleDelete}>
+      <form className="admin-form" onSubmit={handleDelete}>
         <input
           type="title"
           id="title"
@@ -59,8 +56,7 @@ const DeleteBlog = () => {
         <br />
         <button type="submit">Delete</button>
       </form>
-      <div id="submit-feedback-pos"></div>
-      <div id="submit-feedback-neg"></div>
+      <Feedback feedback={feedback} />
     </main>
   );
 };

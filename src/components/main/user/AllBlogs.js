@@ -31,7 +31,7 @@ const AllBlogs = () => {
         </div>
       ) : (
         <div style={{ textAlign: "center" }}>
-          <h4>All Blogs</h4>
+          <h4 className="all-blogs-header">All Blogs</h4>
           {blogs.map((blg) => {
             return (
               <Blog
@@ -56,16 +56,11 @@ const Blog = (props) => {
     setCurrentBlog(props.blg);
   };
   return (
-    <div key={_id}>
+    <div className="blog-card" key={_id}>
       <h2>{title}</h2>
-      <img
-        width={"100px"}
-        src={image}
-        alt="blog"
-        style={{ borderRadius: "50% " }}
-      />
+      <img src={image} alt={title} />
       <h4>{snippet}</h4>
-      <h5>BY : {author}</h5>
+      <h5>Author : {author}</h5>
       <button
         onClick={(e) => {
           handleClick(e);
@@ -74,21 +69,20 @@ const Blog = (props) => {
       >
         Read More
       </button>
-      <hr />
     </div>
   );
 };
 
 const BlogView = (props) => {
-  const { _id, title, snippet, image, content, author } = props.blg;
+  const { _id, title, image, content, author } = props.blg;
   const handleClick = props.handleClick;
   return (
-    <div key={_id}>
+    <div className="detail-blog" key={_id}>
       <h2>{title}</h2>
-      <h4>{snippet}</h4>
-      <img src={image} alt="blog" />
+      {/* <h4>{snippet}</h4> */}
+      <img src={image} alt={title} />
       <p>{content}</p>
-      <h3>BY : {author}</h3>
+      <h3>Author : {author}</h3>
       <button onClick={() => handleClick()}>Back</button>
     </div>
   );

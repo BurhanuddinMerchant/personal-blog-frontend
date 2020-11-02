@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Feedback from "./Feedback";
 const LogInOut = () => {
+  const [feedback, setFeedback] = useState({
+    message: "",
+    type: 1,
+  });
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -10,25 +15,18 @@ const LogInOut = () => {
     const { email, password } = user;
 
     if (email && password) {
-      document.getElementById("submit-feedback-neg").innerHTML = "";
-      document.getElementById("submit-feedback-pos").innerHTML = "Loading.....";
+      setFeedback({ message: "Loading...", type: 1 });
       if (localStorage.getItem("token")) {
-        document.getElementById("submit-feedback-neg").innerHTML = "";
-        document.getElementById("submit-feedback-pos").innerHTML =
-          "Already Logged In";
+        setFeedback({ message: "Already Logged In", type: 1 });
       } else {
         axios
           .post("admin/login", user)
           .then((res) => {
             localStorage.setItem("token", res.data.token);
-            document.getElementById("submit-feedback-neg").innerHTML = "";
-            document.getElementById("submit-feedback-pos").innerHTML =
-              "Successfully Logged In!!";
+            setFeedback({ message: "Successfully Logged In!!", type: 2 });
           })
           .catch((e) => {
-            document.getElementById("submit-feedback-neg").innerHTML =
-              "Login Failed";
-            document.getElementById("submit-feedback-pos").innerHTML = "";
+            setFeedback({ message: "Login Failed!", type: 3 });
             console.log(e);
           });
       }
@@ -38,17 +36,13 @@ const LogInOut = () => {
         password: "",
       });
     } else {
-      document.getElementById("submit-feedback-neg").innerHTML =
-        "Please Fill All Details!!";
-      document.getElementById("submit-feedback-pos").innerHTML = "";
+      setFeedback({ message: "Please Fill All Details!!", type: 3 });
     }
   };
   const deleteAdmin = () => {
     //logout current admin
     if (!localStorage.getItem("token")) {
-      document.getElementById("submit-feedback-neg").innerHTML =
-        "You Are Not Logged In!!";
-      document.getElementById("submit-feedback-pos").innerHTML = "";
+      setFeedback({ message: "You Are Not Logged In!!", type: 3 });
       return;
     } else {
       var config = {
@@ -61,16 +55,12 @@ const LogInOut = () => {
       };
       axios(config)
         .then(function (response) {
-          document.getElementById("submit-feedback-pos").innerHTML =
-            "Deleted Successfully";
-          document.getElementById("submit-feedback-neg").innerHTML = "";
+          setFeedback({ message: "Deleted Successfully", type: 2 });
           console.log(JSON.stringify(response.data));
           localStorage.removeItem("token");
         })
         .catch(function (error) {
-          document.getElementById("submit-feedback-neg").innerHTML =
-            "Deletion Failed";
-          document.getElementById("submit-feedback-pos").innerHTML = "";
+          setFeedback({ message: "Deletion Failed", type: 3 });
           console.log(error);
         });
     }
@@ -78,9 +68,7 @@ const LogInOut = () => {
   const logout = () => {
     //logout current admin
     if (!localStorage.getItem("token")) {
-      document.getElementById("submit-feedback-neg").innerHTML =
-        "You Are Not Logged In!!";
-      document.getElementById("submit-feedback-pos").innerHTML = "";
+      setFeedback({ message: "You Are Not Logged In!!", type: 3 });
       return;
     } else {
       var config = {
@@ -93,16 +81,12 @@ const LogInOut = () => {
       };
       axios(config)
         .then(function (response) {
-          document.getElementById("submit-feedback-pos").innerHTML =
-            "Logged Out Successfully";
-          document.getElementById("submit-feedback-neg").innerHTML = "";
-          console.log(JSON.stringify(response.data));
+          setFeedback({ message: "Logged Out Successfully", type: 2 });
+          // console.log(JSON.stringify(response.data));
           localStorage.removeItem("token");
         })
         .catch(function (error) {
-          document.getElementById("submit-feedback-neg").innerHTML =
-            "Logout Failed";
-          document.getElementById("submit-feedback-pos").innerHTML = "";
+          setFeedback({ message: "Logout Failed", type: 3 });
           console.log(error);
         });
     }
@@ -114,11 +98,11 @@ const LogInOut = () => {
   };
 
   return (
-    <main>
+    <main style={{ textAlign: "center" }}>
       <button onClick={logout}>Logout</button>
       <button onClick={deleteAdmin}>Delete</button>
       <h4>Blogs Admin Login</h4>
-      <form onSubmit={handleSubmit}>
+      <form className="admin-form" onSubmit={handleSubmit}>
         <input
           type="email"
           id="email"
@@ -139,8 +123,7 @@ const LogInOut = () => {
         <br />
         <button type="submit">Login</button>
       </form>
-      <div id="submit-feedback-pos"></div>
-      <div id="submit-feedback-neg"></div>
+      <Feedback feedback={feedback} />
     </main>
   );
 };
