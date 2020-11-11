@@ -74,7 +74,7 @@ const Blog = (props) => {
 };
 
 const BlogView = (props) => {
-  const { _id, title, image, content, author } = props.blg;
+  const { _id, title, image, content, author, comments } = props.blg;
   const handleClick = props.handleClick;
   return (
     <div className="detail-blog" key={_id}>
@@ -83,9 +83,88 @@ const BlogView = (props) => {
       <img src={image} alt={title} />
       <p>{content}</p>
       <h3>Author : {author}</h3>
+      <CommentForm title={title} />
+      <CommentSection comments={comments} />
       <button onClick={() => handleClick()}>Back</button>
     </div>
   );
 };
+const CommentForm = (props) => {
+  const title = props.title;
+  const [Comment, setComment] = useState({
+    commenter: "",
+    comment: "",
+    title: title,
+  });
+  console.log(title);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setComment({ ...Comment, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(Comment);
+    if (Comment.comment && Comment.commenter) {
+      var data = JSON.stringify(Comment);
 
+      var config = {
+        method: "post",
+        url: "blog/comment",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: data,
+      };
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  };
+  return (
+    <>
+      <h4>Blogs Admin Login</h4>
+      <form className="admin-form" onSubmit={handleSubmit}>
+        <input
+          type="name"
+          id="commenter"
+          name="commenter"
+          placeholder="name"
+          value={Comment.commenter}
+          onChange={handleChange}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="comment"
+          id="comment"
+          name="comment"
+          value={Comment.comment}
+          onChange={handleChange}
+        />
+        <br />
+        <button type="submit">Comment</button>
+      </form>
+    </>
+  );
+};
+const CommentSection = (props) => {
+  const commentsArr = props.comments;
+  return (
+    <>
+      {commentsArr.map((comnt) => {
+        console.log(comnt);
+        return (
+          <div key={comnt._id} className="comment">
+            <h3 id="commenter">{comnt.commenter}</h3>
+            <p id="comment-text">{comnt.comment}</p>
+          </div>
+        );
+      })}
+    </>
+  );
+};
 export default AllBlogs;
