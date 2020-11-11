@@ -203,6 +203,7 @@ nav a:hover {
   border: 0;
   padding: 1em;
   border-radius: 5%;
+  margin-top: 1em;
 }
 .detail-blog button:hover {
   background-color: var(--c2);
@@ -255,6 +256,7 @@ nav a:hover {
 .comment {
   background-color: #d9d9d9;
   padding: 0;
+  margin-bottom: 1em;
   /* display: flex; */
 }
 #commenter {
@@ -266,6 +268,9 @@ nav a:hover {
   background-color: #ffffff;
   padding-top: 1em;
   margin-top: 0;
+}
+.delete-blog {
+  margin-bottom: 1em;
 }
 /* footer section */
 footer {

@@ -84,7 +84,7 @@ const BlogView = (props) => {
       <p>{content}</p>
       <h3>Author : {author}</h3>
       <CommentForm title={title} />
-      <CommentSection comments={comments} />
+      <CommentSection comments={comments} title={title} />
       <button onClick={() => handleClick()}>Back</button>
     </div>
   );
@@ -153,14 +153,41 @@ const CommentForm = (props) => {
 };
 const CommentSection = (props) => {
   const commentsArr = props.comments;
+  const title = props.title;
   return (
     <>
       {commentsArr.map((comnt) => {
-        console.log(comnt);
+        const { comment, commenter } = comnt;
+        const handleClick = () => {
+          const data = {
+            comment: comment,
+            title: title,
+          };
+          var config = {
+            method: "delete",
+            url: "blog/comment",
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
+              "Content-Type": "application/json",
+            },
+            data: data,
+          };
+          axios(config)
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        };
         return (
           <div key={comnt._id} className="comment">
-            <h3 id="commenter">{comnt.commenter}</h3>
-            <p id="comment-text">{comnt.comment}</p>
+            <h3 id="commenter">{commenter}</h3>
+            <p id="comment-text">{comment}</p>,
+            <button onClick={handleClick} className="delete-blog">
+              {" "}
+              delete
+            </button>
           </div>
         );
       })}
