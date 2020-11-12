@@ -183,9 +183,8 @@ const CommentSection = (props) => {
         return (
           <div key={comnt._id} className="comment">
             <h3 id="commenter">{commenter}</h3>
-            <p id="comment-text">{comment}</p>,
+            <p id="comment-text">{comment}</p>
             <button onClick={handleClick} className="delete-blog">
-              {" "}
               delete
             </button>
           </div>

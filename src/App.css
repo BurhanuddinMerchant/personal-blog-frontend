@@ -80,7 +80,9 @@ nav a:hover {
 }
 
 /* main content section */
-
+.home-image {
+  width: 50%;
+}
 /* admin section */
 /* admin navbar */
 .admin-nav {
