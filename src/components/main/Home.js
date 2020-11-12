@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <main>
       <div style={{ textAlign: "center" }} className="home">
-        <h1>Welcome To Home Page</h1>
+        <h1>Welcome To The Blog</h1>
         <img className="home-image" alt="home" src={svg} />
       </div>
     </main>

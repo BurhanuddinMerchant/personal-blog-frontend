@@ -125,18 +125,17 @@ const CommentForm = (props) => {
     }
   };
   return (
-    <>
-      <h4>Blogs Admin Login</h4>
-      <form className="admin-form" onSubmit={handleSubmit}>
+    <div className="comment-submit">
+      <h4>Comment Section</h4>
+      <form className="comment-form" onSubmit={handleSubmit}>
         <input
-          type="name"
+          type="text"
           id="commenter"
           name="commenter"
           placeholder="name"
           value={Comment.commenter}
           onChange={handleChange}
         />
-        <br />
         <input
           type="text"
           placeholder="comment"
@@ -145,17 +144,18 @@ const CommentForm = (props) => {
           value={Comment.comment}
           onChange={handleChange}
         />
-        <br />
-        <button type="submit">Comment</button>
+        <button type="submit" id="comment-submit">
+          Comment
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 const CommentSection = (props) => {
   const commentsArr = props.comments;
   const title = props.title;
   return (
-    <>
+    <div className="comment-section">
       {commentsArr.map((comnt) => {
         const { comment, commenter } = comnt;
         const handleClick = () => {
@@ -182,15 +182,17 @@ const CommentSection = (props) => {
         };
         return (
           <div key={comnt._id} className="comment">
-            <h3 id="commenter">{commenter}</h3>
-            <p id="comment-text">{comment}</p>
-            <button onClick={handleClick} className="delete-blog">
-              delete
-            </button>
+            <div className="comment-head">
+              <h3 className="commenter">{commenter}</h3>
+              <button onClick={handleClick} className="delete-blog">
+                delete
+              </button>
+            </div>
+            <p className="comment-text">{comment}</p>
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 export default AllBlogs;
