@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = () => {
-  let showNav = false;
+  let showNav = true;
   const onClickShow = () => {
     if (showNav) {
       document.getElementById("nav-ul").style.display = "flex";
