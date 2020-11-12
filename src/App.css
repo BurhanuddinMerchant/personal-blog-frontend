@@ -77,8 +77,29 @@ nav a:hover {
   nav li {
     padding: 0 2em;
   }
+  #show-nav {
+    display: none;
+  }
 }
-
+#show-nav {
+  background-color: var(--c2);
+  border: var(--c4) 1px solid;
+  color: var(--c4);
+  font-weight: 700;
+  margin-bottom: 1em;
+  /* font-size: 1rem; */
+}
+#show-nav:hover {
+  background-color: var(--c3);
+  color: var(--c2);
+}
+#show-nav:active {
+  background-color: var(--c2);
+  border: var(--c4) 1px solid;
+  border-radius: 0;
+  color: var(--c4);
+  font-weight: 700;
+}
 /* main content section */
 .home-image {
   width: 50%;

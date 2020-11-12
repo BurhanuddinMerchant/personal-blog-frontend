@@ -1,9 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = () => {
+  let showNav = false;
+  const onClickShow = () => {
+    if (showNav) {
+      document.getElementById("nav-ul").style.display = "flex";
+    } else {
+      document.getElementById("nav-ul").style.display = "none";
+    }
+    showNav = !showNav;
+  };
   return (
     <nav>
-      <ul>
+      <button id="show-nav" onClick={onClickShow}>
+        =
+      </button>
+      <ul id="nav-ul">
         <li>
           <Link to="/">Home</Link>
         </li>
