@@ -8,18 +8,18 @@ const AllBlogs = () => {
   const [currentBlog, setCurrentBlog] = useState({});
   useEffect(() => {
     const usefetch = async () => {
-      // axios
-      //   .get("blog")
-      //   .then((res) => res.data)
-      //   .then((result) => {
-      //     console.log("Api Call");
-      //     console.log(result);
-      //     setblogs(result);
-      //   })
-      //   .catch((e) => {
-      //     console.log(e);
-      //   });
-      setblogs(allBlogs);
+      axios
+        .get("blog")
+        .then((res) => res.data)
+        .then((result) => {
+          console.log("Api Call");
+          console.log(result);
+          setblogs(result);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      // setblogs(allBlogs);
     };
     usefetch();
   }, []);
