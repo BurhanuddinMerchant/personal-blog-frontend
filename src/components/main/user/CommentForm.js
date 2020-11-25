@@ -37,9 +37,9 @@ const CommentForm = (props) => {
     }
   };
   return (
-    <div className="comment-submit">
+    <div>
       <h4>Comment Section</h4>
-      <form className="comment-form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           id="commenter"

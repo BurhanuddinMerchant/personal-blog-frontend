@@ -8,19 +8,27 @@ const BlogList = (props) => {
     setCurrentBlog(props.blg);
   };
   return (
-    <div className="blog-card" key={_id}>
-      <h2>{title}</h2>
-      <img src={image} alt={title} />
-      <h4>{snippet}</h4>
-      <h5>Author : {author}</h5>
-      <button
-        onClick={(e) => {
-          handleClick(e);
-          changeState(props);
-        }}
-      >
-        Read More
-      </button>
+    <div className="blog-list-item" key={_id}>
+      <img className="blog-list-image" src={image} alt={title} />
+      <div className="blog-list-content">
+        <div className="blog-list-upper">
+          <h2 className="blog-list-title">{title}</h2>
+
+          <button
+            className="blog-list-button"
+            onClick={(e) => {
+              handleClick(e);
+              changeState(props);
+            }}
+          >
+            Read More
+          </button>
+        </div>
+        <div className="blog-list-lower">
+          <p className="blog-list-snippet">Snippet : {snippet}</p>
+          <p className="blog-list-author">Author : {author}</p>
+        </div>
+      </div>
     </div>
   );
 };

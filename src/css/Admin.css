@@ -1,0 +1,79 @@
+:root {
+  --c1: #d9d9d9;
+  --c2: #e88a1a;
+  --c3: #cf3030;
+  --c4: #141414;
+
+  /* secondary */
+  --c5: #d82e3f;
+  --c6: #ffe135;
+  --c7: #28cc2d;
+  --c8: #3581d8;
+}
+
+.admin-nav {
+  border: var(--c4) 2px solid;
+  text-align: center;
+  margin: 2em auto;
+  padding: 0 2em;
+  width: fit-content;
+  background-color: var(--c4);
+}
+
+.admin {
+  width: 100%;
+}
+@media (min-width: 675px) {
+  .admin {
+    padding: 2em;
+    margin: auto;
+    width: fit-content;
+  }
+}
+.admin h4 {
+  color: var(--c4);
+  font-size: 1.5em;
+}
+.admin-form {
+  font-family: "Open Sans", sans-serif;
+}
+.admin-form input {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  width: 90%;
+  border: 0;
+  border-bottom: #111111 1px solid;
+}
+.admin-form input:hover {
+  border-bottom: var(--c8) 1px solid;
+}
+
+.admin-form textarea {
+  padding: 0.5em;
+  width: 90%;
+  border: #111111 1px solid;
+  font-family: "Open Sans", sans-serif;
+}
+.admin button {
+  margin-left: 1em;
+  color: var(--c1);
+  background: var(--c3);
+  border: 0;
+  padding: 0.5em;
+  min-width: 150px;
+}
+.admin button:hover {
+  background: var(--c2);
+}
+.admin-form button {
+  min-width: 200px;
+  background-color: var(--c4);
+  color: var(--c1);
+  padding: 0.5em;
+  border: 0;
+  margin-bottom: 1em;
+}
+.admin-form button:hover {
+  background-color: var(--c5);
+  color: var(--c4);
+}

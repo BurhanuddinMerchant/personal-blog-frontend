@@ -3,7 +3,7 @@ import Header from "./components/header/Header.js";
 import Footer from "./components/footer/Footer.js";
 import Home from "./components/main/Home";
 import Admin from "./components/main/admin";
-import Blogs from "./components/main/user/AllBlogs";
+import Blogs from "./components/main/user/Blogs";
 import About from "./components/main/About";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 const App = () => {
