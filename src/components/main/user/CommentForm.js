@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const CommentForm = (props) => {
-  const title = props.title;
+  const { setFeedback, title } = props;
   const [Comment, setComment] = useState({
     commenter: "",
     comment: "",
@@ -14,6 +14,7 @@ const CommentForm = (props) => {
     setComment({ ...Comment, [name]: value });
   };
   const handleSubmit = (e) => {
+    setFeedback({ message: "Loading....", type: 1, show: true });
     e.preventDefault();
     console.log(Comment);
     if (Comment.comment && Comment.commenter) {
@@ -29,9 +30,19 @@ const CommentForm = (props) => {
       };
       axios(config)
         .then(function (response) {
+          setFeedback({
+            message: "Comment Posted Successfully",
+            type: 2,
+            show: true,
+          });
           console.log(JSON.stringify(response.data));
         })
         .catch(function (error) {
+          setFeedback({
+            message: "Comment Post Failed!!",
+            type: 3,
+            show: true,
+          });
           console.log(error);
         });
     }

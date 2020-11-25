@@ -5,6 +5,7 @@ const CreateBlog = () => {
   const [feedback, setFeedback] = useState({
     message: "",
     type: 1,
+    show: false,
   });
   const [blog, setblog] = useState({
     id: new Date().getTime(),
@@ -21,7 +22,7 @@ const CreateBlog = () => {
       // document.getElementById("feedback-neg").innerHTML = "";
       // document.getElementById("feedback-pos").innerHTML =
       //   "Successfully Submitted!!";
-      setFeedback({ message: "Loading...", type: 1 });
+      setFeedback({ message: "Loading...", type: 1, show: true });
       var data = JSON.stringify(blog);
 
       var config = {
@@ -37,7 +38,11 @@ const CreateBlog = () => {
         .then(function (response) {
           // document.getElementById("feedback-pos").innerHTML =
           //   "Created Successfully!!";
-          setFeedback({ message: "Created Successfully!!", type: 2 });
+          setFeedback({
+            message: "Created Successfully!!",
+            type: 2,
+            show: true,
+          });
           // console.log("Api Call");
           console.log(JSON.stringify(response.data));
         })
@@ -45,7 +50,11 @@ const CreateBlog = () => {
           // document.getElementById("feedback-neg").innerHTML =
           //   "Please Authenticate";
           // document.getElementById("feedback-pos").innerHTML = "";
-          setFeedback({ message: "Please Authenticate!!", type: 3 });
+          setFeedback({
+            message: "Please Authenticate!!",
+            type: 3,
+            show: true,
+          });
           // console.log(error);
         });
       setblog({
@@ -60,7 +69,11 @@ const CreateBlog = () => {
       // document.getElementById("feedback-neg").innerHTML =
       //   "Please Fill out all details!!";
       // document.getElementById("feedback-pos").innerHTML = "";
-      setFeedback({ message: "Please Fill out all details!!", type: 3 });
+      setFeedback({
+        message: "Please Fill out all details!!",
+        type: 3,
+        show: true,
+      });
     }
   };
   const handleChange = (e) => {

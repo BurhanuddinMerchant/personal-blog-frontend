@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import CommentSection from "./CommentSection";
 import CommentForm from "./CommentForm";
+import Feedback from "../admin/utilities/Feedback";
 const BlogView = (props) => {
+  const [feedback, setFeedback] = useState({
+    message: "",
+    type: 1,
+    show: false,
+  });
   const { _id, title, image, content, author, comments } = props.blg;
   const handleClick = props.handleClick;
   return (
@@ -13,8 +19,13 @@ const BlogView = (props) => {
       <p className="blog-detail-content">{content}</p>
       <p className="blog-detail-author">Author : {author}</p>
       <h4>Comment Section</h4>
-      <CommentForm title={title} />
-      <CommentSection comments={comments} title={title} />
+      <Feedback feedback={feedback} />
+      <CommentForm setFeedback={setFeedback} title={title} />
+      <CommentSection
+        setFeedback={setFeedback}
+        comments={comments}
+        title={title}
+      />
       <button className="blog-detail-button" onClick={() => handleClick()}>
         Back
       </button>

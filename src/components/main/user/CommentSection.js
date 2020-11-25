@@ -2,12 +2,18 @@ import React from "react";
 import axios from "axios";
 const CommentSection = (props) => {
   const commentsArr = props.comments;
+  const setFeedback = props.setFeedback;
   const title = props.title;
   return (
     <div className="comment-section">
       {commentsArr.map((comnt) => {
         const { comment, commenter } = comnt;
         const handleClick = () => {
+          setFeedback({
+            message: "Loading....",
+            type: 1,
+            show: true,
+          });
           const data = {
             comment: comment,
             title: title,
@@ -23,10 +29,20 @@ const CommentSection = (props) => {
           };
           axios(config)
             .then(function (response) {
+              setFeedback({
+                message: "Comment Deleted Successfully!!",
+                type: 2,
+                show: true,
+              });
               console.log(response);
             })
             .catch(function (error) {
               console.log(error);
+              setFeedback({
+                message: "Deletion Failed (Not Logged In)!!",
+                type: 3,
+                show: true,
+              });
             });
         };
         return (
