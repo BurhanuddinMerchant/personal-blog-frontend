@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
+import allBlogs from "../test_data/pseudoApiCall";
 import axios from "axios";
+import DetailBlog from "./DetailBlog";
+import BlogList from "./BlogList";
 const AllBlogs = () => {
   const [blogs, setblogs] = useState([]);
   const [currentBlog, setCurrentBlog] = useState({});
   useEffect(() => {
     const usefetch = async () => {
-      axios
-        .get("blog")
-        .then((res) => res.data)
-        .then((result) => {
-          console.log("Api Call");
-          // console.log(result);
-          setblogs(result);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+      // axios
+      //   .get("blog")
+      //   .then((res) => res.data)
+      //   .then((result) => {
+      //     console.log("Api Call");
+      //     console.log(result);
+      //     setblogs(result);
+      //   })
+      //   .catch((e) => {
+      //     console.log(e);
+      //   });
+      setblogs(allBlogs);
     };
     usefetch();
   }, []);
@@ -27,14 +31,14 @@ const AllBlogs = () => {
     <main>
       {isDetailBlogView ? (
         <div style={{ textAlign: "center" }}>
-          <BlogView blg={currentBlog} handleClick={handleClick} />
+          <DetailBlog blg={currentBlog} handleClick={handleClick} />
         </div>
       ) : (
         <div style={{ textAlign: "center" }}>
           <h4 className="all-blogs-header">All Blogs</h4>
           {blogs.map((blg) => {
             return (
-              <Blog
+              <BlogList
                 blg={blg}
                 key={blg._id}
                 handleClick={handleClick}
@@ -48,151 +52,4 @@ const AllBlogs = () => {
   );
 };
 
-const Blog = (props) => {
-  const { _id, title, snippet, image, author } = props.blg;
-  const handleClick = props.handleClick;
-  const setCurrentBlog = props.setCurrentBlog;
-  const changeState = (props) => {
-    setCurrentBlog(props.blg);
-  };
-  return (
-    <div className="blog-card" key={_id}>
-      <h2>{title}</h2>
-      <img src={image} alt={title} />
-      <h4>{snippet}</h4>
-      <h5>Author : {author}</h5>
-      <button
-        onClick={(e) => {
-          handleClick(e);
-          changeState(props);
-        }}
-      >
-        Read More
-      </button>
-    </div>
-  );
-};
-
-const BlogView = (props) => {
-  const { _id, title, image, content, author, comments } = props.blg;
-  const handleClick = props.handleClick;
-  return (
-    <div className="detail-blog" key={_id}>
-      <h2>{title}</h2>
-      {/* <h4>{snippet}</h4> */}
-      <img src={image} alt={title} />
-      <p>{content}</p>
-      <h3>Author : {author}</h3>
-      <CommentForm title={title} />
-      <CommentSection comments={comments} title={title} />
-      <button onClick={() => handleClick()}>Back</button>
-    </div>
-  );
-};
-const CommentForm = (props) => {
-  const title = props.title;
-  const [Comment, setComment] = useState({
-    commenter: "",
-    comment: "",
-    title: title,
-  });
-  console.log(title);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setComment({ ...Comment, [name]: value });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(Comment);
-    if (Comment.comment && Comment.commenter) {
-      var data = JSON.stringify(Comment);
-
-      var config = {
-        method: "post",
-        url: "blog/comment",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: data,
-      };
-      axios(config)
-        .then(function (response) {
-          console.log(JSON.stringify(response.data));
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  };
-  return (
-    <div className="comment-submit">
-      <h4>Comment Section</h4>
-      <form className="comment-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="commenter"
-          name="commenter"
-          placeholder="name"
-          value={Comment.commenter}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          placeholder="comment"
-          id="comment"
-          name="comment"
-          value={Comment.comment}
-          onChange={handleChange}
-        />
-        <button type="submit" id="comment-submit">
-          Comment
-        </button>
-      </form>
-    </div>
-  );
-};
-const CommentSection = (props) => {
-  const commentsArr = props.comments;
-  const title = props.title;
-  return (
-    <div className="comment-section">
-      {commentsArr.map((comnt) => {
-        const { comment, commenter } = comnt;
-        const handleClick = () => {
-          const data = {
-            comment: comment,
-            title: title,
-          };
-          var config = {
-            method: "delete",
-            url: "blog/comment",
-            headers: {
-              Authorization: "Bearer " + localStorage.getItem("token"),
-              "Content-Type": "application/json",
-            },
-            data: data,
-          };
-          axios(config)
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-        };
-        return (
-          <div key={comnt._id} className="comment">
-            <div className="comment-head">
-              <h3 className="commenter">{commenter}</h3>
-              <button onClick={handleClick} className="delete-blog">
-                delete
-              </button>
-            </div>
-            <p className="comment-text">{comment}</p>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
 export default AllBlogs;
