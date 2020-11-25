@@ -8,18 +8,18 @@ const AllBlogs = () => {
   const [currentBlog, setCurrentBlog] = useState({});
   useEffect(() => {
     const usefetch = async () => {
-      axios
-        .get("blog")
-        .then((res) => res.data)
-        .then((result) => {
-          console.log("Api Call");
-          console.log(result);
-          setblogs(result);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-      // setblogs(allBlogs);
+      // axios
+      //   .get("blog")
+      //   .then((res) => res.data)
+      //   .then((result) => {
+      //     console.log("Api Call");
+      //     console.log(result);
+      //     setblogs(result);
+      //   })
+      //   .catch((e) => {
+      //     console.log(e);
+      //   });
+      setblogs(allBlogs);
     };
     usefetch();
   }, []);
@@ -34,8 +34,8 @@ const AllBlogs = () => {
           <DetailBlog blg={currentBlog} handleClick={handleClick} />
         </div>
       ) : (
-        <div className="blog-list" style={{ textAlign: "center" }}>
-          <h4>All Blogs</h4>
+        <div className="blog-list">
+          <h4 style={{ margin: "1em auto", fontSize: "2em" }}>All Blogs</h4>
           {blogs.map((blg) => {
             return (
               <BlogList

@@ -30,12 +30,14 @@ const CommentSection = (props) => {
             });
         };
         return (
-          <div key={comnt._id}>
-            <div>
-              <h3>{commenter}</h3>
-              <button onClick={handleClick}>delete</button>
+          <div className="comment-card" key={comnt._id}>
+            <div className="comment-card-upper">
+              <p className="comment-card-name">{commenter}</p>
+              <button className="comment-card-delete" onClick={handleClick}>
+                delete
+              </button>
             </div>
-            <p>{comment}</p>
+            <p className="comment-card-comment">{comment}</p>
           </div>
         );
       })}

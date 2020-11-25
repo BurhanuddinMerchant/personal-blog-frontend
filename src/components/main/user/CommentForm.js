@@ -37,30 +37,29 @@ const CommentForm = (props) => {
     }
   };
   return (
-    <div>
-      <h4>Comment Section</h4>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="commenter"
-          name="commenter"
-          placeholder="name"
-          value={Comment.commenter}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          placeholder="comment"
-          id="comment"
-          name="comment"
-          value={Comment.comment}
-          onChange={handleChange}
-        />
-        <button type="submit" id="comment-submit">
-          Comment
-        </button>
-      </form>
-    </div>
+    <form className="comment-form" onSubmit={handleSubmit}>
+      <input
+        className="comment-form-name"
+        type="text"
+        id="commenter"
+        name="commenter"
+        placeholder="name"
+        value={Comment.commenter}
+        onChange={handleChange}
+      />
+      <input
+        className="comment-form-comment"
+        type="text"
+        placeholder="comment"
+        id="comment"
+        name="comment"
+        value={Comment.comment}
+        onChange={handleChange}
+      />
+      <button type="submit" className="comment-form-submit">
+        Comment
+      </button>
+    </form>
   );
 };
 

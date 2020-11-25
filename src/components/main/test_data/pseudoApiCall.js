@@ -20,6 +20,11 @@ const blogList = [
     updatedAt: "2020-11-12T05:58:08.349Z",
     comments: [
       { comment: "post 2 comment 1", commenter: "post 2 commenter 1" },
+      { comment: "post 2 comment 1", commenter: "post 2 commenter 1" },
+      { comment: "post 2 comment 1", commenter: "post 2 commenter 1" },
+      { comment: "post 2 comment 1", commenter: "post 2 commenter 1" },
+      { comment: "post 2 comment 1", commenter: "post 2 commenter 1" },
+      { comment: "post 2 comment 1", commenter: "post 2 commenter 1" },
     ],
     author: "author",
   },

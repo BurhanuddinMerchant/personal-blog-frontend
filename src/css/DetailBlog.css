@@ -1,0 +1,36 @@
+.blog-detail {
+  background-color: var(--c4);
+  margin-bottom: 2em;
+  width: 95%;
+  margin: 2em auto;
+}
+.blog-detail-image {
+  width: 100%;
+  height: 10%;
+  max-height: 500px;
+  object-fit: cover;
+}
+.blog-detail-title {
+  color: #ffffff;
+}
+.blog-detail-content {
+  background-color: var(--c1);
+  margin: 1em;
+  padding: 2em;
+  min-height: 300px;
+}
+.blog-detail-author {
+  margin-right: 0;
+}
+.blog-detail-button {
+  margin-bottom: 2em;
+  border: 0;
+  padding: 0.5em;
+  color: var(--c2);
+  background-color: var(--c3);
+}
+.blog-detail-button:hover {
+  background-color: var(--c5);
+  color: var(--c6);
+}
+@import "./Comment.css";
