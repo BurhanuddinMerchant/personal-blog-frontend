@@ -3,6 +3,9 @@
   width: 90%;
   margin: auto;
 }
+.comment-form:hover {
+  box-shadow: 0 0 5px var(--c2);
+}
 .comment-form-name {
   width: 20%;
 }
@@ -41,13 +44,24 @@
   background-color: black;
   margin-bottom: 1em;
 }
+.comment-card:hover {
+  box-shadow: 0 0 10px var(--c3);
+}
 .comment-card-upper {
   border-bottom: #ffffff 2px solid;
   display: flex;
   justify-content: space-between;
 }
+.comment-card-upper:hover {
+  border-bottom: var(--c2) 2px solid;
+  display: flex;
+  justify-content: space-between;
+}
 .comment-card-name {
   color: var(--c3);
+}
+.comment-card-name:hover {
+  text-shadow: 0 0 2px var(--c3);
 }
 .comment-card-delete {
   height: fit-content;
@@ -61,6 +75,7 @@
 .comment-card-delete:hover {
   color: var(--c3);
   background-color: var(--c2);
+  box-shadow: 0 0 5px var(--c2);
 }
 .comment-card-comment {
   width: fit-content;

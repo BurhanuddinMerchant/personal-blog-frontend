@@ -12,6 +12,9 @@
   --c7: #28cc2d;
   --c8: #3581d8;
 }
+button {
+  cursor: pointer;
+}
 body {
   padding: 0;
   margin: 0;

@@ -1,20 +1,28 @@
 .blog-list {
   width: 95%;
-  margin: auto;
-  background: #ffffff;
+  margin: 2em auto;
+  /* background: #ffffff; */
+  background-color: var(--c4);
   padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
+.blog-list h4:hover {
+  text-shadow: 0 0 10px var(--c3);
+  cursor: default;
+}
 .blog-list-item {
-  background: var(--c4);
+  /* background: var(--c4); */
+  background: #000000;
   display: flex;
   padding: 0.5em 0 0.5em 0.5em;
   width: 100%;
   margin: auto;
   margin-bottom: 1em;
+}
+.blog-list-item:hover {
+  box-shadow: 0 0 10px var(--c3);
 }
 @media (max-width: 1000px) {
   .blog-list {
@@ -54,6 +62,7 @@
 .blog-list-button:hover {
   background-color: var(--c3);
   color: var(--c2);
+  box-shadow: 0 0 5px var(--c3);
 }
 .blog-list-lower {
   display: flex;

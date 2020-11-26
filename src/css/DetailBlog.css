@@ -32,5 +32,6 @@
 .blog-detail-button:hover {
   background-color: var(--c5);
   color: var(--c6);
+  box-shadow: 0 0 2px var(--c3);
 }
 @import "./Comment.css";
