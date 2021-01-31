@@ -85,6 +85,9 @@
 .admin-hero {
   text-align: center;
 }
+.admin-hero img {
+  width: 95%;
+}
 .admin-hero h1 {
   background-color: var(--c4);
   padding: 0.125em;
