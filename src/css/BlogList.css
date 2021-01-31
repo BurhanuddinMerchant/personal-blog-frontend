@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .blog-list {
   width: 95%;
   margin: 2em auto;
@@ -20,6 +25,7 @@
   width: 100%;
   margin: auto;
   margin-bottom: 1em;
+  box-shadow: black 0 0 10px;
 }
 .blog-list-item:hover {
   box-shadow: 0 0 10px var(--c3);
@@ -54,10 +60,17 @@
 .blog-list-button {
   height: fit-content;
   margin: auto 0;
+  margin-bottom: 1em;
   padding: 1em;
   border: 0;
   color: var(--c4);
   background-color: var(--c2);
+}
+@media (max-width: 600px) {
+  .blog-list-button {
+    padding: 0.5em;
+    height: fit-content;
+  }
 }
 .blog-list-button:hover {
   background-color: var(--c3);

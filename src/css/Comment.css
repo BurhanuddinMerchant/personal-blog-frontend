@@ -1,9 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .comment-form {
   display: flex;
   width: 90%;
   margin: auto;
 }
-.comment-form:hover {
+.comment-form input:hover,
+.comment-form button:hover {
   box-shadow: 0 0 5px var(--c2);
 }
 .comment-form-name {
@@ -26,6 +32,7 @@
   border: 0;
   color: var(--c2);
   background-color: var(--c3);
+  padding-right: 0.5em;
 }
 .comment-form-submit:hover {
   color: var(--c3);
@@ -71,6 +78,7 @@
   border: 0;
   color: var(--c2);
   background-color: var(--c3);
+  margin-bottom: 1em;
 }
 .comment-card-delete:hover {
   color: var(--c3);
