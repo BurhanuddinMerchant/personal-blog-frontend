@@ -57,7 +57,7 @@ const DeleteBlog = () => {
   };
   return (
     <main style={{ textAlign: "center" }}>
-      <h4>Blogs Admin Signup</h4>
+      <h4>Delete Blog</h4>
       <form className="admin-form" onSubmit={handleDelete}>
         <input
           type="title"

@@ -41,11 +41,9 @@ body {
 
 @import "./css/Nav.css";
 /* main content section */
-.home-image {
-  width: 50%;
-}
+/*home section*/
+@import "./css/Home.css";
 /* admin section */
-
 @import "./css/Admin.css";
 /*blog*/
 @import "./css/Blog.css";
@@ -54,6 +52,7 @@ body {
 main {
   max-width: 1500px;
   margin: auto;
+  text-align: "center";
 }
 /* footer section */
 footer {
