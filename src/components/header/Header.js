@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Title from "./Title";
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
       <Title />
-      <Navbar />
+      <Navbar navActive={props.navActive} />
     </header>
   );
 };

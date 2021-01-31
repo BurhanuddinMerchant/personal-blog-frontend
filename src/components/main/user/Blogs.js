@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import allBlogs from "../test_data/pseudoApiCall";
 import axios from "axios";
 import DetailBlog from "./DetailBlog";
 import BlogList from "./BlogList";
+import Header from "../../header/Header";
 const AllBlogs = () => {
   const [blogs, setblogs] = useState([]);
   const [currentBlog, setCurrentBlog] = useState({});
@@ -27,28 +27,32 @@ const AllBlogs = () => {
   const handleClick = () => {
     setIsDetailBlogView(!isDetailBlogView);
   };
+
   return (
-    <main>
-      {isDetailBlogView ? (
-        <div style={{ textAlign: "center" }}>
-          <DetailBlog blg={currentBlog} handleClick={handleClick} />
-        </div>
-      ) : (
-        <div className="blog-list">
-          <h4 style={{ margin: "1em auto", fontSize: "2em" }}>All Blogs</h4>
-          {blogs.map((blg) => {
-            return (
-              <BlogList
-                blg={blg}
-                key={blg._id}
-                handleClick={handleClick}
-                setCurrentBlog={setCurrentBlog}
-              />
-            );
-          })}
-        </div>
-      )}
-    </main>
+    <>
+      <Header navActive={{ allblogs: "active" }} />
+      <main>
+        {isDetailBlogView ? (
+          <div style={{ textAlign: "center" }}>
+            <DetailBlog blg={currentBlog} handleClick={handleClick} />
+          </div>
+        ) : (
+          <div className="blog-list">
+            <h4 style={{ margin: "1em auto", fontSize: "2em" }}>All Blogs</h4>
+            {blogs.map((blg) => {
+              return (
+                <BlogList
+                  blg={blg}
+                  key={blg._id}
+                  handleClick={handleClick}
+                  setCurrentBlog={setCurrentBlog}
+                />
+              );
+            })}
+          </div>
+        )}
+      </main>
+    </>
   );
 };
 

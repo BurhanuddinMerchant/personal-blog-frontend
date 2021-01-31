@@ -9,12 +9,11 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 const App = () => {
   return (
     <Router>
-      <Header />
       <Switch>
-        <Home exact path="/" />
-        <Admin exact path="/admin" />
-        <Blogs exact path="/blogs" />
-        <About exact path="/about" />
+        <Home exact path="/" navActive={{ home: "active" }} />
+        <Admin exact path="/admin" navActive={{ home: "active" }} />
+        <Blogs exact path="/blogs" navActive={{ home: "active" }} />
+        <About exact path="/about" navActive={{ home: "active" }} />
       </Switch>
       <Footer />
     </Router>
