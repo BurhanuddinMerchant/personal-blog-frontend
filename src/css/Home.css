@@ -35,4 +35,7 @@ main {
   .home-content p {
     width: 100%;
   }
+  .home {
+    padding: 0;
+  }
 }
