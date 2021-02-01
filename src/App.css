@@ -39,6 +39,7 @@ body {
 
 /* header section */
 
+@import "./css/About.css";
 @import "./css/Nav.css";
 /* main content section */
 /*home section*/
@@ -48,7 +49,6 @@ body {
 /*blog*/
 @import "./css/Blog.css";
 /*blog-view*/
-
 main {
   max-width: 1500px;
   margin: auto;
