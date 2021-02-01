@@ -27,6 +27,7 @@
 
 .admin {
   width: 100%;
+  margin: auto;
 }
 @media (min-width: 675px) {
   .admin {
@@ -98,4 +99,8 @@
   font-weight: 600;
   color: var(--c3);
   margin-bottom: 1em;
+}
+.admin-nav {
+  width: 95%;
+  justify-content: space-evenly;
 }

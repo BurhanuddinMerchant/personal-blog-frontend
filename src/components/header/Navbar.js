@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
-  console.log(props.navActive);
   const { home, allblogs, about, admin } = props.navActive;
+
   return (
-    <nav>
+    <nav id="main-navbar">
       <ul id="nav-ul">
         <li>
           <Link to="/" className={home}>
