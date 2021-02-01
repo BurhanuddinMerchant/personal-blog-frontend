@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Feedback from "./Feedback";
+import Navbar from "../nav/Navbar";
+import login from "../login.svg";
 const LogInOut = () => {
   const [feedback, setFeedback] = useState({
     message: "",
@@ -126,33 +128,41 @@ const LogInOut = () => {
   };
 
   return (
-    <main style={{ textAlign: "center" }}>
-      <button onClick={logout}>Logout</button>
-      <button onClick={deleteAdmin}>Delete</button>
-      <h4>Blogs Admin Login</h4>
-      <form className="admin-form" onSubmit={handleSubmit}>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="enter email"
-          value={user.email}
-          onChange={handleChange}
+    <>
+      <Navbar navActive={{ loginOut: "active" }} />
+      <main style={{ textAlign: "center" }}>
+        <img
+          alt="login-out"
+          style={{ width: "90%", marginBottom: "1em" }}
+          src={login}
         />
-        <br />
-        <input
-          type="password"
-          placeholder="password"
-          id="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-        />
-        <br />
-        <button type="submit">Login</button>
-      </form>
-      <Feedback feedback={feedback} />
-    </main>
+        <button onClick={logout}>Logout</button>
+        <button onClick={deleteAdmin}>Delete</button>
+        <h4>Blogs Admin Login</h4>
+        <form className="admin-form" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="enter email"
+            value={user.email}
+            onChange={handleChange}
+          />
+          <br />
+          <input
+            type="password"
+            placeholder="password"
+            id="password"
+            name="password"
+            value={user.password}
+            onChange={handleChange}
+          />
+          <br />
+          <button type="submit">Login</button>
+        </form>
+        <Feedback feedback={feedback} />
+      </main>
+    </>
   );
 };
 export default LogInOut;

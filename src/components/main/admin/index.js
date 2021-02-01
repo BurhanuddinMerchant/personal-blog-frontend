@@ -6,22 +6,23 @@ import Navbar from "./nav/Navbar";
 import Header from "../../header/Header";
 import AdminSVG from "./admin.svg";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-const App = () => {
-  console.log("admin");
+const App = (props) => {
   return (
     <>
       <Header navActive={{ admin: "active" }} />
       <Router>
         <div className="admin" style={{ background: "white" }}>
-          <Navbar />
+          <h1>Welcome to the Admin section!</h1>
           <Switch>
             <CreateBlog exact path="/createblog" />
             <DeleteBlog exact path="/deleteblog" />
             <LogInOut exact path="/login-out" />
-            <div className="admin-hero">
-              <h1>Welcome to the Admin section!</h1>
-              <p>Manage all your content from this section</p>
-              <img src={AdminSVG}></img>
+            <div>
+              <Navbar navActive={{}} />
+              <div className="admin-hero">
+                <p>Manage all your content from this section</p>
+                <img src={AdminSVG} alt="admin"></img>
+              </div>
             </div>
           </Switch>
         </div>

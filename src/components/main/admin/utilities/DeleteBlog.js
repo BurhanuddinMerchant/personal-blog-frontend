@@ -1,7 +1,8 @@
 import axios from "axios";
-
+import deleteImage from "../delete.svg";
 import Feedback from "./Feedback";
 import React, { useState } from "react";
+import Navbar from "../nav/Navbar";
 const DeleteBlog = () => {
   const [feedback, setFeedback] = useState({
     message: "",
@@ -56,22 +57,30 @@ const DeleteBlog = () => {
     setTitle(value);
   };
   return (
-    <main style={{ textAlign: "center" }}>
-      <h4>Delete Blog</h4>
-      <form className="admin-form" onSubmit={handleDelete}>
-        <input
-          type="title"
-          id="title"
-          name="title"
-          placeholder="title"
-          value={title}
-          onChange={handleChange}
+    <>
+      <Navbar navActive={{ deleteBlg: "active" }} />
+      <main style={{ textAlign: "center" }}>
+        <h4>Delete Blog</h4>
+        <img
+          style={{ width: "100%", marginBottom: "1em" }}
+          alt="delete-blog"
+          src={deleteImage}
         />
-        <br />
-        <button type="submit">Delete</button>
-      </form>
-      <Feedback feedback={feedback} />
-    </main>
+        <form className="admin-form" onSubmit={handleDelete}>
+          <input
+            type="title"
+            id="title"
+            name="title"
+            placeholder="Blog Title"
+            value={title}
+            onChange={handleChange}
+          />
+          <br />
+          <button type="submit">Delete</button>
+        </form>
+        <Feedback feedback={feedback} />
+      </main>
+    </>
   );
 };
 export default DeleteBlog;

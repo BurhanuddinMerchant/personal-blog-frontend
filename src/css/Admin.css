@@ -89,10 +89,12 @@
 .admin-hero img {
   width: 95%;
 }
-.admin-hero h1 {
+.admin h1 {
+  margin-top: 1em;
   background-color: var(--c4);
   padding: 0.125em;
-  border-radius: 999px;
+  text-align: center;
+  color: var(--c3);
 }
 .admin-hero p {
   font-size: 1.25rem;
@@ -101,6 +103,7 @@
   margin-bottom: 1em;
 }
 .admin-nav {
-  width: 95%;
-  justify-content: space-evenly;
+  width: 100%;
+  justify-content: center;
+  margin-top: 0;
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Feedback from "./Feedback";
+import Navbar from "../nav/Navbar";
 const CreateBlog = () => {
   const [feedback, setFeedback] = useState({
     message: "",
@@ -66,9 +67,6 @@ const CreateBlog = () => {
         image: "",
       });
     } else {
-      // document.getElementById("feedback-neg").innerHTML =
-      //   "Please Fill out all details!!";
-      // document.getElementById("feedback-pos").innerHTML = "";
       setFeedback({
         message: "Please Fill out all details!!",
         type: 3,
@@ -81,66 +79,69 @@ const CreateBlog = () => {
     setblog({ ...blog, [name]: value });
   };
   return (
-    <main style={{ textAlign: "center" }}>
-      <h4>Create Blog</h4>
-      <form className="admin-form" onSubmit={handleSubmit}>
-        <input
-          type="name"
-          id="title"
-          name="title"
-          placeholder="title"
-          value={blog.title}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="text"
-          id="snippet"
-          name="snippet"
-          placeholder="snippet"
-          value={blog.snippet}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="text area"
-          placeholder="author"
-          id="author"
-          name="author"
-          value={blog.author}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="url"
-          placeholder="image url"
-          id="image"
-          name="image"
-          value={blog.image}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <textarea
-          rows="10"
-          cols="30"
-          type="content"
-          placeholder="content"
-          id="content"
-          name="content"
-          value={blog.content}
-          onChange={handleChange}
-        />
+    <>
+      <Navbar navActive={{ create: "active" }} />
+      <main style={{ textAlign: "center" }}>
+        <h4>Create Blog</h4>
+        <form className="admin-form" onSubmit={handleSubmit}>
+          <input
+            type="name"
+            id="title"
+            name="title"
+            placeholder="title"
+            value={blog.title}
+            onChange={handleChange}
+          />
+          <br />
+          <input
+            type="text"
+            id="snippet"
+            name="snippet"
+            placeholder="snippet"
+            value={blog.snippet}
+            onChange={handleChange}
+          />
+          <br />
+          <input
+            type="text area"
+            placeholder="author"
+            id="author"
+            name="author"
+            value={blog.author}
+            onChange={handleChange}
+          />
+          <br />
+          <input
+            type="url"
+            placeholder="image url"
+            id="image"
+            name="image"
+            value={blog.image}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
+          <textarea
+            rows="10"
+            cols="30"
+            type="content"
+            placeholder="content"
+            id="content"
+            name="content"
+            value={blog.content}
+            onChange={handleChange}
+          />
 
-        <br />
+          <br />
 
-        <button type="submit">Create</button>
-        <br />
-      </form>
+          <button type="submit">Create</button>
+          <br />
+        </form>
 
-      <Feedback feedback={feedback} />
-      <br />
-    </main>
+        <Feedback feedback={feedback} />
+        <br />
+      </main>
+    </>
   );
 };
 
