@@ -1,5 +1,5 @@
 import React from "react";
-import svg from "./undraw_Content_re_33px.svg";
+import svg from "./home.svg";
 import Header from "../header/Header";
 const Login = (props) => {
   console.log(props);
