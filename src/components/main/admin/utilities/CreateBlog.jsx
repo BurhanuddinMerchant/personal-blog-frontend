@@ -71,7 +71,7 @@ const CreateBlog = () => {
     <>
       <Navbar navActive={{ create: "active" }} />
       <main style={{ textAlign: "center" }}>
-        <h4>Create Blog</h4>
+        <h4 className="admin-sub-head">Create Blog</h4>
         <form className="admin-form" onSubmit={handleSubmit}>
           <input
             type="name"

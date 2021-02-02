@@ -131,7 +131,7 @@ const LogInOut = () => {
     <>
       <Navbar navActive={{ loginOut: "active" }} />
       <main style={{ textAlign: "center" }}>
-        <h4>Admin Login</h4>
+        <h4 className="admin-sub-head">Admin Login</h4>
         <img
           alt="login-out"
           style={{ width: "90%", marginBottom: "1em" }}

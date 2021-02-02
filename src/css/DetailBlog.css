@@ -64,4 +64,10 @@
   text-shadow: 0 0 3px;
   cursor: default;
 }
+@media (max-width: 600px) {
+  .blog-detail h4,
+  .blog-detail-author {
+    font-size: 1em;
+  }
+}
 @import "./Comment.css";

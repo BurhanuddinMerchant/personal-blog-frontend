@@ -58,7 +58,7 @@ const DeleteBlog = () => {
     <>
       <Navbar navActive={{ deleteBlg: "active" }} />
       <main style={{ textAlign: "center" }}>
-        <h4>Delete Blog</h4>
+        <h4 className="admin-sub-head">Delete Blog</h4>
         <img
           style={{ width: "100%", marginBottom: "1em" }}
           alt="delete-blog"
