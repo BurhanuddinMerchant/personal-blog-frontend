@@ -1,5 +1,5 @@
 import axios from "axios";
-import deleteImage from "../delete.svg";
+import deleteImage from "../../../assets/delete.svg";
 import Feedback from "./Feedback";
 import React, { useState } from "react";
 import Navbar from "../nav/Navbar";

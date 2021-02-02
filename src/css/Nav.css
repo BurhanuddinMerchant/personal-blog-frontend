@@ -93,5 +93,5 @@ nav {
   text-shadow: 0 0 3px;
 }
 #shownav:hover {
-  content: url("../components//header/hamburger_active.png");
+  content: url("../components/assets/hamburger_active.png");
 }

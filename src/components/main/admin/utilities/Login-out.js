@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Feedback from "./Feedback";
 import Navbar from "../nav/Navbar";
-import login from "../login.svg";
+import login from "../../../assets/login.svg";
 const LogInOut = () => {
   const [feedback, setFeedback] = useState({
     message: "",

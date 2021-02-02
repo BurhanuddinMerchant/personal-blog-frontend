@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Title from "./Title";
-import hamburger from "./hamburger.png";
-import hamburgerActive from "./hamburger_active.png";
+import hamburger from "../assets/hamburger.png";
+import hamburgerActive from "../assets/hamburger_active.png";
 const Header = (props) => {
   const [showNav, setShowNav] = useState(true);
   const handleClick = (e) => {

@@ -4,7 +4,7 @@ import DeleteBlog from "./utilities/DeleteBlog";
 import LogInOut from "./utilities/Login-out";
 import Navbar from "./nav/Navbar";
 import Header from "../../header/Header";
-import AdminSVG from "./admin.svg";
+import AdminSVG from "../../assets/admin.svg";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 const App = () => {
   return (

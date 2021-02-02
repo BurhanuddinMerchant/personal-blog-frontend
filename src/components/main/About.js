@@ -1,5 +1,5 @@
 import React from "react";
-import svg from "./about.svg";
+import svg from "../assets/about.svg";
 import Header from "../header/Header";
 const Login = () => {
   return (
