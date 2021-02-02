@@ -28,6 +28,7 @@
 .admin {
   width: 100%;
   margin: auto;
+  background-color: #ffffff;
 }
 @media (min-width: 675px) {
   .admin {

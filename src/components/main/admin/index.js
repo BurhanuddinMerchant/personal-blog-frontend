@@ -6,12 +6,12 @@ import Navbar from "./nav/Navbar";
 import Header from "../../header/Header";
 import AdminSVG from "./admin.svg";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-const App = (props) => {
+const App = () => {
   return (
     <>
       <Header navActive={{ admin: "active" }} />
       <Router>
-        <div className="admin" style={{ background: "white" }}>
+        <div className="admin">
           <h1>Welcome to the Admin section!</h1>
           <Switch>
             <CreateBlog exact path="/createblog" />

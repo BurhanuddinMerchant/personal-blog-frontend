@@ -26,9 +26,12 @@
   margin: auto;
   margin-bottom: 1em;
   box-shadow: black 0 0 10px;
+  border: black 2px solid;
 }
 .blog-list-item:hover {
+  border: var(--c3) 2px solid;
   box-shadow: 0 0 10px var(--c3);
+  cursor: default;
 }
 @media (max-width: 1000px) {
   .blog-list {

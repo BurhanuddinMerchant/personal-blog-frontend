@@ -45,6 +45,7 @@ nav a {
 }
 nav a:hover {
   color: var(--c3);
+  text-shadow: 0 0 2px;
 }
 .title-button-container button {
   display: block;
@@ -89,4 +90,9 @@ nav {
 .active {
   color: #cf3030;
   border-bottom: #cf3030 2px solid;
+  text-shadow: 0 0 2px;
+}
+.title-button-container div {
+  cursor: default;
+  text-shadow: 0 0 3px;
 }

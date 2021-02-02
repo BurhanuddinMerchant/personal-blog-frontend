@@ -23,6 +23,7 @@ main {
   background-color: black;
   color: var(--c3);
   box-shadow: black 0 0 10px;
+  cursor: pointer;
 }
 .home h1 {
   color: var(--c1);
