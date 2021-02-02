@@ -1,56 +1,39 @@
 import React from "react";
 const Feedback = (props) => {
   const { message, type, show } = props.feedback;
+
   let display;
   if (show) {
-    display = "block";
+    display = "flex";
+    document.getElementsByClassName("feedback")[0].style.display = display;
   } else {
     display = "none";
   }
-  const stylePos = {
-    background: "#4CAF50",
-    color: "#ffffff",
-    padding: "0.5em",
-    margin: "auto",
-    marginBottom: "2em",
-    width: "95%%",
-    maxWidth: "500px",
-    display,
+  const handleClick = (e) => {
+    e.preventDefault();
+    e.target.parentElement.style.display = "none";
   };
-  const styleNeg = {
-    background: "#f44336",
-    color: "#ffffff",
-    padding: "0.5em",
-    margin: "auto",
-    marginBottom: "2em",
-    width: "95%%",
-    maxWidth: "500px",
-    display,
-  };
-  const styleNeut = {
-    background: "#3581d8",
-    color: "#ffffff",
-    padding: "0.5em",
-    margin: "auto",
-    marginBottom: "2em",
-    width: "95%%",
-    maxWidth: "500px",
-    display,
-  };
-  let style;
+  let feedbackType;
   switch (type) {
     case 1: {
-      style = styleNeut;
+      feedbackType = "neutral";
       break;
     }
     case 2: {
-      style = stylePos;
+      feedbackType = "positive";
       break;
     }
     default: {
-      style = styleNeg;
+      feedbackType = "negative";
     }
   }
-  return <div style={style}>{message}</div>;
+  return (
+    <div className="feedback" id={feedbackType} style={{ display }}>
+      <span>{message}</span>
+      <span id="feedback-close" onClick={handleClick}>
+        close
+      </span>
+    </div>
+  );
 };
 export default Feedback;

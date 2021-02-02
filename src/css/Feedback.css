@@ -1,0 +1,28 @@
+#neutral {
+  color: #3581d8;
+}
+#positive {
+  color: #4caf50;
+}
+#negative {
+  color: #f44336;
+}
+.feedback {
+  display: none;
+  margin: auto;
+  width: fit-content;
+  padding: 0.5em;
+  background-color: #000000;
+  min-width: 300px;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  border: 2px solid;
+  border-radius: 999px;
+}
+.feedback span {
+  margin: auto 0;
+}
+#feedback-close:hover {
+  text-shadow: 0 0 5px;
+  cursor: pointer;
+}

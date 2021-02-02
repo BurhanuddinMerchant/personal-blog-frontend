@@ -47,8 +47,8 @@ body {
 
 @import "./css/About.css";
 @import "./css/Nav.css";
-/* main content section */
-/*home section*/
+@import "./css/Feedback.css";
+/* main content section */ /*home section*/
 @import "./css/Home.css";
 /* admin section */
 @import "./css/Admin.css";
