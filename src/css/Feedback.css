@@ -18,6 +18,10 @@
   margin-bottom: 1em;
   border: 2px solid;
   border-radius: 999px;
+  box-shadow: #ffffff 0 0 5px;
+}
+.feedback:hover {
+  box-shadow: 0 0 5px;
 }
 .feedback span {
   margin: auto 0;
@@ -25,4 +29,10 @@
 #feedback-close:hover {
   text-shadow: 0 0 5px;
   cursor: pointer;
+}
+@media (max-width: 600px) {
+  .feedback {
+    box-shadow: 0 0 5px;
+    text-shadow: 0 0 3px;
+  }
 }
