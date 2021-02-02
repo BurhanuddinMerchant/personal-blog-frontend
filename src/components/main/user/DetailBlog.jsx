@@ -16,8 +16,13 @@ const BlogView = (props) => {
       <h2 className="blog-detail-title">{title}</h2>
       {/* <h4>{snippet}</h4> */}
 
-      <p className="blog-detail-content">{content}</p>
-      <p className="blog-detail-author">Author : {author}</p>
+      <p className="blog-detail-content">
+        {content}
+        <p className="blog-detail-author">
+          <span>Author : </span>
+          {author}
+        </p>
+      </p>
       <h4>Comment Section</h4>
       <Feedback feedback={feedback} />
       <CommentForm setFeedback={setFeedback} title={title} />

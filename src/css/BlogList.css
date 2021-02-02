@@ -63,6 +63,7 @@
   border: 0;
   color: var(--c4);
   background-color: var(--c2);
+  box-shadow: 0 0 3px var(--c2);
 }
 @media (max-width: 600px) {
   .blog-list-button {
@@ -89,4 +90,16 @@
   width: fit-content;
   color: #ffffff;
   margin-bottom: 0;
+}
+.blog-list-lower {
+  font-weight: 600;
+}
+.blog-list-lower span {
+  color: var(--c2);
+  text-shadow: 0 0 2px;
+  font-weight: 600;
+}
+.blog-list-lower p:hover,
+.blog-list-title {
+  text-shadow: 0 0 2px;
 }

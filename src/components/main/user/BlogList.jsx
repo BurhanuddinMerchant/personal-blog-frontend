@@ -25,8 +25,14 @@ const BlogList = (props) => {
           </button>
         </div>
         <div className="blog-list-lower">
-          <p className="blog-list-snippet">Snippet : {snippet}</p>
-          <p className="blog-list-author">Author : {author}</p>
+          <p className="blog-list-snippet">
+            <span>Snippet : </span>
+            {snippet}
+          </p>
+          <p className="blog-list-author">
+            <span>Author : </span>
+            {author}
+          </p>
         </div>
       </div>
     </div>
