@@ -131,6 +131,7 @@ const LogInOut = () => {
     <>
       <Navbar navActive={{ loginOut: "active" }} />
       <main style={{ textAlign: "center" }}>
+        <h4>Admin Login</h4>
         <img
           alt="login-out"
           style={{ width: "90%", marginBottom: "1em" }}
@@ -138,7 +139,6 @@ const LogInOut = () => {
         />
         <button onClick={logout}>Logout</button>
         <button onClick={deleteAdmin}>Delete</button>
-        <h4>Blogs Admin Login</h4>
         <form className="admin-form" onSubmit={handleSubmit}>
           <input
             type="email"
