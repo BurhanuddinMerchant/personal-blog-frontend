@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Title from "./Title";
+import hamburger from "./hamburger.png";
+import hamburgerActive from "./hamburger_active.png";
 const Header = (props) => {
   const [showNav, setShowNav] = useState(true);
   const handleClick = (e) => {
@@ -9,8 +11,10 @@ const Header = (props) => {
     if (showNav) {
       document.getElementById("main-navbar").style["display"] = "flex";
       document.getElementById("main-navbar").style["margin"] = "auto";
+      document.getElementById("shownav").src = hamburgerActive;
     } else {
       document.getElementById("main-navbar").style.display = "none";
+      document.getElementById("shownav").src = hamburger;
     }
     setShowNav(!showNav);
   };
@@ -18,9 +22,12 @@ const Header = (props) => {
     <header>
       <div className="title-button-container">
         <Title />
-        <button id="shownav" onClick={handleClick}>
-          =
-        </button>
+        <img
+          id="shownav"
+          src={hamburger}
+          alt="hamburger"
+          onClick={handleClick}
+        ></img>
       </div>
       <Navbar navActive={props.navActive} />
     </header>

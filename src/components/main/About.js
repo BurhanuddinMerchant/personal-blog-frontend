@@ -24,6 +24,7 @@ const Login = () => {
                   href="https://github.com/BurhanuddinMerchant"
                   className="github"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   GitHub
                 </a>
@@ -31,6 +32,7 @@ const Login = () => {
                   className="linkedin"
                   href="https://www.linkedin.com/in/burhanuddin-merchant-89b14a198/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   LinkedIN
                 </a>

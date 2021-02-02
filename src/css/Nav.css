@@ -42,13 +42,14 @@ nav a:hover {
   color: var(--c3);
   text-shadow: 0 0 2px;
 }
-.title-button-container button {
+.title-button-container img {
+  max-width: 50px;
   display: block;
   height: fit-content;
   margin: auto;
   margin-right: 1em;
-  color: #cf3030;
-  background-color: #e88a1a;
+  /* color: #cf3030; */
+  /* background-color: #e88a1a; */
   border: none;
   padding: 0.5em;
 }
@@ -63,7 +64,7 @@ nav {
   display: flex;
 }
 @media (min-width: 675px) {
-  .title-button-container button {
+  .title-button-container img {
     display: none;
   }
   header {
@@ -90,4 +91,7 @@ nav {
 .title-button-container div {
   cursor: default;
   text-shadow: 0 0 3px;
+}
+#shownav:hover {
+  content: url("../components//header/hamburger_active.png");
 }
