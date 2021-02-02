@@ -69,5 +69,12 @@
   .blog-detail-author {
     font-size: 1em;
   }
+  .blog-detail {
+    width: 100%;
+  }
+  .blog-detail-content {
+    width: 99%;
+    margin: auto;
+  }
 }
 @import "./Comment.css";
