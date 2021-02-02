@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./components/footer/Footer.js";
+import Footer from "./components/footer/Footer";
 import Home from "./components/main/Home";
 import Admin from "./components/main/admin";
 import Blogs from "./components/main/user/Blogs";
