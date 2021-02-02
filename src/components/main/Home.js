@@ -2,7 +2,6 @@ import React from "react";
 import svg from "./home.svg";
 import Header from "../header/Header";
 const Login = (props) => {
-  console.log(props);
   return (
     <>
       <Header navActive={{ home: "active" }} />

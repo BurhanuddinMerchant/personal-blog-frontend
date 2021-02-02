@@ -20,9 +20,6 @@ const CreateBlog = () => {
     e.preventDefault();
     const { title, snippet, image, content, author } = blog;
     if (title && snippet && image && content && author) {
-      // document.getElementById("feedback-neg").innerHTML = "";
-      // document.getElementById("feedback-pos").innerHTML =
-      //   "Successfully Submitted!!";
       setFeedback({ message: "Loading...", type: 1, show: true });
       var data = JSON.stringify(blog);
 
@@ -37,26 +34,18 @@ const CreateBlog = () => {
       };
       axios(config)
         .then(function (response) {
-          // document.getElementById("feedback-pos").innerHTML =
-          //   "Created Successfully!!";
           setFeedback({
             message: "Created Successfully!!",
             type: 2,
             show: true,
           });
-          // console.log("Api Call");
-          console.log(JSON.stringify(response.data));
         })
         .catch(function (error) {
-          // document.getElementById("feedback-neg").innerHTML =
-          //   "Please Authenticate";
-          // document.getElementById("feedback-pos").innerHTML = "";
           setFeedback({
             message: "Please Authenticate!!",
             type: 3,
             show: true,
           });
-          // console.log(error);
         });
       setblog({
         id: new Date().getTime(),

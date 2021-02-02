@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 const CommentForm = (props) => {
   const { setFeedback, title } = props;
   const [Comment, setComment] = useState({
@@ -8,7 +7,6 @@ const CommentForm = (props) => {
     comment: "",
     title: title,
   });
-  console.log(title);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setComment({ ...Comment, [name]: value });
@@ -16,7 +14,6 @@ const CommentForm = (props) => {
   const handleSubmit = (e) => {
     setFeedback({ message: "Loading....", type: 1, show: true });
     e.preventDefault();
-    console.log(Comment);
     if (Comment.comment && Comment.commenter) {
       var data = JSON.stringify(Comment);
 
@@ -35,7 +32,6 @@ const CommentForm = (props) => {
             type: 2,
             show: true,
           });
-          console.log(JSON.stringify(response.data));
         })
         .catch(function (error) {
           setFeedback({
@@ -43,7 +39,6 @@ const CommentForm = (props) => {
             type: 3,
             show: true,
           });
-          console.log(error);
         });
     }
   };

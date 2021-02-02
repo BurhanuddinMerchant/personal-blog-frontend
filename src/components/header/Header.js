@@ -6,7 +6,6 @@ import hamburgerActive from "./hamburger_active.png";
 const Header = (props) => {
   const [showNav, setShowNav] = useState(true);
   const handleClick = (e) => {
-    console.log(e);
     e.preventDefault();
     if (showNav) {
       document.getElementById("main-navbar").style["display"] = "flex";

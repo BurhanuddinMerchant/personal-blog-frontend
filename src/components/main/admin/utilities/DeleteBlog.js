@@ -41,11 +41,9 @@ const DeleteBlog = () => {
               type: 2,
               show: true,
             });
-            // console.log(JSON.stringify(response.data));
           })
           .catch(function (error) {
             setFeedback({ message: "Deletion Failed", type: 3, show: true });
-            // console.log(error);
           });
       }
     } else {

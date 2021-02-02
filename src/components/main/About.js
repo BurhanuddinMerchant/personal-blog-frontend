@@ -2,7 +2,6 @@ import React from "react";
 import svg from "./about.svg";
 import Header from "../header/Header";
 const Login = () => {
-  console.log("about");
   return (
     <>
       <Header navActive={{ about: "active" }} />

@@ -12,13 +12,9 @@ const AllBlogs = () => {
         .get("blog")
         .then((res) => res.data)
         .then((result) => {
-          console.log("Api Call");
-          console.log(result);
           setblogs(result);
         })
-        .catch((e) => {
-          console.log(e);
-        });
+        .catch((e) => {});
       // setblogs(allBlogs);
     };
     usefetch();

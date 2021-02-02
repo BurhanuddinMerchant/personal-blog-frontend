@@ -8,10 +8,7 @@ const Feedback = (props) => {
     display = "none";
   }
   const stylePos = {
-    // background: "#ffffcc",
-    // background: "#141414",
     background: "#4CAF50",
-    // color: "#4CAF50",
     color: "#ffffff",
     padding: "0.5em",
     margin: "auto",
@@ -21,10 +18,7 @@ const Feedback = (props) => {
     display,
   };
   const styleNeg = {
-    // background: "#f5eded",
-    // background: "#141414",
     background: "#f44336",
-    // color: "#f44336",
     color: "#ffffff",
     padding: "0.5em",
     margin: "auto",
@@ -34,10 +28,7 @@ const Feedback = (props) => {
     display,
   };
   const styleNeut = {
-    // background: "#8cd3ff",
-    // background: "#141414",
     background: "#3581d8",
-    // color: "#ff9800",
     color: "#ffffff",
     padding: "0.5em",
     margin: "auto",

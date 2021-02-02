@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
-  console.log(props);
   const { deleteBlg, create, loginOut } = props.navActive;
   return (
     <nav className="admin-nav">
