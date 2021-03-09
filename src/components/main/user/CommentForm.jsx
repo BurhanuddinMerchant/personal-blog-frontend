@@ -40,6 +40,12 @@ const CommentForm = (props) => {
             show: true,
           });
         });
+    } else {
+      setFeedback({
+        message: "Enter All Details!!",
+        type: 3,
+        show: true,
+      });
     }
   };
   return (

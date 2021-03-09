@@ -35,16 +35,22 @@ const AllBlogs = () => {
         ) : (
           <div className="blog-list">
             <h4 style={{ margin: "1em auto", fontSize: "2em" }}>All Blogs</h4>
-            {blogs.map((blg) => {
-              return (
-                <BlogList
-                  blg={blg}
-                  key={blg._id}
-                  handleClick={handleClick}
-                  setCurrentBlog={setCurrentBlog}
-                />
-              );
-            })}
+            {blogs.length !== 0 ? (
+              blogs.map((blg) => {
+                return (
+                  <BlogList
+                    blg={blg}
+                    key={blg._id}
+                    handleClick={handleClick}
+                    setCurrentBlog={setCurrentBlog}
+                  />
+                );
+              })
+            ) : (
+              <p style={{ width: "fit-content", margin: "auto" }}>
+                Loading....
+              </p>
+            )}
           </div>
         )}
       </main>
