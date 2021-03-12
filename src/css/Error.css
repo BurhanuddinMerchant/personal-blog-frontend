@@ -1,0 +1,22 @@
+.home-btn {
+  padding: 1em;
+  background-color: #cf3030;
+  color: #ffffff;
+  border: 0;
+}
+.home-btn:hover {
+  background-color: #d82e3f;
+  box-shadow: #d82e3f 0 0 10px;
+}
+.error {
+  max-width: 1000px;
+  margin: 2em auto;
+}
+.error h1 {
+  color: #cf3030;
+  margin-bottom: 1em;
+}
+.error img {
+  width: 100%;
+  margin-bottom: 1em;
+}

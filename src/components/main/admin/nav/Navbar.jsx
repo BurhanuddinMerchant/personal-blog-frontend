@@ -6,17 +6,17 @@ const Navbar = (props) => {
     <nav className="admin-nav">
       <ul className="admin-ul">
         <li className="admin-li">
-          <Link to="/login-out" className={loginOut}>
+          <Link to="/admin/login-out" className={loginOut}>
             Login/out/Delete
           </Link>
         </li>
         <li>
-          <Link to="/createblog" className={create}>
+          <Link to="/admin/createblog" className={create}>
             Create Blogs
           </Link>
         </li>
         <li>
-          <Link to="/deleteblog" className={deleteBlg}>
+          <Link to="/admin/deleteblog" className={deleteBlg}>
             Delete Blog
           </Link>
         </li>

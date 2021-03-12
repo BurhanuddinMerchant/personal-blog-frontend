@@ -14,9 +14,9 @@ const App = () => {
         <div className="admin">
           <h1>Welcome to the Admin section!</h1>
           <Switch>
-            <CreateBlog exact path="/createblog" />
-            <DeleteBlog exact path="/deleteblog" />
-            <LogInOut exact path="/login-out" />
+            <CreateBlog exact path="/admin/createblog" />
+            <DeleteBlog exact path="/admin/deleteblog" />
+            <LogInOut exact path="/admin/login-out" />
             <div>
               <Navbar navActive={{}} />
               <div className="admin-hero">

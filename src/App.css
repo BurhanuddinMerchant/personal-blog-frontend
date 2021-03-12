@@ -54,6 +54,8 @@ body {
 @import "./css/Admin.css";
 /*blog*/
 @import "./css/Blog.css";
+/* Error */
+@import "./css/Error.css";
 /*blog-view*/
 main {
   max-width: 1500px;
